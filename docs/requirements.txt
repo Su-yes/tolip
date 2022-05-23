@@ -4,3 +4,4 @@ tables
 sphinx
 sphinx_rtd_theme
 autodocsumm
+scipy

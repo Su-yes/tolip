@@ -44,7 +44,6 @@
 <li class="toctree-l2"><a class="reference internal" href="sushi_dynamics.html">sushi_dynamics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sushi_math.html">sushi_math</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">sushi_nastran</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-sushi_nastran.hdf5">sushi_nastran.hdf5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-sushi_nastran.kmp">sushi_nastran.kmp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-sushi_nastran.nas_utils">sushi_nastran.nas_utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-sushi_nastran.rigids">sushi_nastran.rigids</a></li>
@@ -56,7 +55,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sushi_dynamics.html">sushi_dynamics</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">sushi_nastran</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-sushi_nastran.hdf5">sushi_nastran.hdf5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-sushi_nastran.kmp">sushi_nastran.kmp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-sushi_nastran.nas_utils">sushi_nastran.nas_utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-sushi_nastran.rigids">sushi_nastran.rigids</a></li>
@@ -94,10 +92,201 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="sushi-nastran">
-<h1>sushi_nastran<a class="headerlink" href="#sushi-nastran" title="Permalink to this headline"></a></h1>
-<section id="module-sushi_nastran.hdf5">
-<span id="sushi-nastran-hdf5"></span><h2>sushi_nastran.hdf5<a class="headerlink" href="#module-sushi_nastran.hdf5" title="Permalink to this headline"></a></h2>
+  <section id="module-sushi_nastran.hdf5">
+<span id="sushi-nastran"></span><h1>sushi_nastran<a class="headerlink" href="#module-sushi_nastran.hdf5" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_20">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ReadMonPoint3_20</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_20" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Reads an HDF5 file and extracts the monpoint3 results. Only compatible with NASTRAN 2020 Version.</p>
+<p class="rubric">Notes</p>
+<p>Relies on the fact that <code class="code docutils literal notranslate"><span class="pre">dict</span></code> preserves the insertion order. Only valid from Python 3.6 onwards.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_20.export_testeval">
+<span class="sig-name descname"><span class="pre">export_testeval</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_20.export_testeval" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the response as a dictionary but with frequency stacked.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>combined_resp</strong><span class="classifier">dict</span></dt><dd><p>Key = label name; Value = frequency + response.</p>
+</dd>
+<dt><strong>Monpoint_Response</strong><span class="classifier">A .mat file. Format = 4.</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_20.get_freq">
+<span class="sig-name descname"><span class="pre">get_freq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_20.get_freq" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the freqency values used to calculate responses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>freq</strong><span class="classifier">list</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_20.get_labels">
+<span class="sig-name descname"><span class="pre">get_labels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_20.get_labels" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the monitor points’ labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>labels</strong><span class="classifier">list</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_20.get_mon_dofs">
+<span class="sig-name descname"><span class="pre">get_mon_dofs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_20.get_mon_dofs" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the monitor points’ labels and corresponding DOFs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>N/A</strong></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>mon_dofs</strong><span class="classifier">dict</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_20.get_resp_array">
+<span class="sig-name descname"><span class="pre">get_resp_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_20.get_resp_array" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the response as a 2D array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mon_resp</strong><span class="classifier">nd.arrray</span></dt><dd><p>Size =  num_freq_steps x DOF of all monpoints .</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_20.get_resp_dict">
+<span class="sig-name descname"><span class="pre">get_resp_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_20.get_resp_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the response as a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mon_resp_dict</strong><span class="classifier">dict</span></dt><dd><p>Key = label name; Value = response.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_21">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ReadMonPoint3_21</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_21" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Reads an HDF5 file and extracts the monpoint3 results. Only compatible with NASTRAN 2021 Version.</p>
+<p class="rubric">Notes</p>
+<p>Relies on the fact that <code class="code docutils literal notranslate"><span class="pre">dict</span></code> preserves the insertion order. Only valid from Python 3.6 onwards.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_21.export_testeval">
+<span class="sig-name descname"><span class="pre">export_testeval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_21.export_testeval" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the response as a dictionary but with frequency stacked.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>combined_resp</strong><span class="classifier">dict</span></dt><dd><p>Key = label name; Value = frequency + response.</p>
+</dd>
+<dt><strong>Monpoint_Response</strong><span class="classifier">A .mat file. Format = 4.</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_21.get_freq">
+<span class="sig-name descname"><span class="pre">get_freq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_21.get_freq" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the freqency values used to calculate responses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>freq</strong><span class="classifier">list</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_21.get_labels">
+<span class="sig-name descname"><span class="pre">get_labels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_21.get_labels" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the monitor points’ labels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>labels</strong><span class="classifier">list</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_21.get_mon_dofs">
+<span class="sig-name descname"><span class="pre">get_mon_dofs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_21.get_mon_dofs" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the monitor points’ labels and corresponding DOFs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mon_dofs</strong><span class="classifier">dict</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_21.get_resp_array">
+<span class="sig-name descname"><span class="pre">get_resp_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_21.get_resp_array" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the response as a 2D array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mon_resp</strong><span class="classifier">nd.arrray</span></dt><dd><p>Size =  num_freq_steps x DOF of all monpoints</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.ReadMonPoint3_21.get_resp_dict">
+<span class="sig-name descname"><span class="pre">get_resp_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.ReadMonPoint3_21.get_resp_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the response as a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mon_resp_dict</strong><span class="classifier">dict</span></dt><dd><p>Key = label name; Value = response.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.close_h5">
+<span class="sig-name descname"><span class="pre">close_h5</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.close_h5" title="Permalink to this definition"></a></dt>
+<dd><p>Closes a h5 file. Python does not automatically close the file.</p>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="sushi_nastran.hdf5.get_eigenvals">
 <span class="sig-name descname"><span class="pre">get_eigenvals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h5_filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.get_eigenvals" title="Permalink to this definition"></a></dt>
@@ -120,7 +309,6 @@
 <p>Updated: 4/21/2022</p>
 </dd></dl>
 
-</section>
 <section id="module-sushi_nastran.kmp">
 <span id="sushi-nastran-kmp"></span><h2>sushi_nastran.kmp<a class="headerlink" href="#module-sushi_nastran.kmp" title="Permalink to this headline"></a></h2>
 <dl class="py function">
@@ -188,7 +376,7 @@ Assumes the small field with 8 characters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>dof</strong><span class="classifier">int</span></dt><dd><p>RBE2 degrees of freedom.</p>
+<dt><strong>dof</strong><span class="classifier">str</span></dt><dd><p>RBE2 degrees of freedom. E.g. “123456”</p>
 </dd>
 <dt><strong>num_nodes: int</strong></dt><dd><p>The number of RBE2 cards to write out.</p>
 </dd>
@@ -202,14 +390,14 @@ Assumes the small field with 8 characters.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>A file named <cite>RBE2_Input_Nastran.txt</cite> with the RBE2 cards.</dt><dd></dd>
+<dt>A file named <cite>RBE2_Input_Nastran.blk</cite> with the RBE2 cards.</dt><dd></dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
 <p>List must be supplied in int format as this function will convert it to strings.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">generate_rbe2_file</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span><span class="mi">600</span><span class="p">)</span> 
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">generate_rbe2_file</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span><span class="mi">600</span><span class="p">)</span> 
 </pre></div>
 </div>
 </dd></dl>

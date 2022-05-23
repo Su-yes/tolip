@@ -17,7 +17,7 @@ import sys
 # See http://blog.rtwilson.com/how-to-make-your-sphinx-documentation-compile-with-readthedocs-when-youre-using-numpy-and-scipy/
 import mock
 
-MOCK_MODULES = ['numpy', 'tables', 'matplotlib','matplotlib.pyplot','matplotlib.ticker', 'matplotlib.colors']
+MOCK_MODULES = ['numpy', 'tables', 'matplotlib','matplotlib.pyplot','matplotlib.ticker', 'matplotlib.colors', 'scipy']
 for mod_name in MOCK_MODULES:
     sys.modules[mod_name] = mock.Mock()
 
@@ -71,5 +71,7 @@ html_static_path = ['_static']
 # This prevents sphinx from printing full path
 # Instead of x.y.z.fun(), it will just print func() 
 add_module_names = False
+
+numpydoc_show_class_members = False 
 
 

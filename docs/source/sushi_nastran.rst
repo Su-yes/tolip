@@ -1,9 +1,6 @@
 sushi\_nastran
 ==============
 
-sushi\_nastran.hdf5
--------------------
-
 .. automodule:: sushi_nastran.hdf5
    :members:
    :undoc-members:
