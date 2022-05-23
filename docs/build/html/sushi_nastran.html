@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sushi_nastran &mdash; ToLiP 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="sushi_plot" href="sushi_plot.html" />
+    <link rel="prev" title="sushi_math" href="sushi_math.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ToLiP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">tolip</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sushi_dynamics.html">sushi_dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sushi_math.html">sushi_math</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">sushi_nastran</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-sushi_nastran.hdf5">sushi_nastran.hdf5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sushi_nastran.kmp">sushi_nastran.kmp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sushi_nastran.nas_utils">sushi_nastran.nas_utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sushi_nastran.rigids">sushi_nastran.rigids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sushi_nastran.write_loads">sushi_nastran.write_loads</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sushi_plot.html">sushi_plot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sushi_dynamics.html">sushi_dynamics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">sushi_nastran</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-sushi_nastran.hdf5">sushi_nastran.hdf5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sushi_nastran.kmp">sushi_nastran.kmp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sushi_nastran.nas_utils">sushi_nastran.nas_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sushi_nastran.rigids">sushi_nastran.rigids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sushi_nastran.write_loads">sushi_nastran.write_loads</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sushi_math.html">sushi_math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sushi_plot.html">sushi_plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sushi_utils.html">sushi_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version_log.html">Version Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ToLiP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">tolip</a> &raquo;</li>
+      <li>sushi_nastran</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/sushi_nastran.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sushi-nastran">
+<h1>sushi_nastran<a class="headerlink" href="#sushi-nastran" title="Permalink to this headline"></a></h1>
+<section id="module-sushi_nastran.hdf5">
+<span id="sushi-nastran-hdf5"></span><h2>sushi_nastran.hdf5<a class="headerlink" href="#module-sushi_nastran.hdf5" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sushi_nastran.hdf5.get_eigenvals">
+<span class="sig-name descname"><span class="pre">get_eigenvals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h5_filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.hdf5.get_eigenvals" title="Permalink to this definition"></a></dt>
+<dd><p>This function extracts eigenvalues (not vectors) from a supplied HDF5 files and returns as a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>h5_filename</strong><span class="classifier">str</span></dt><dd><p>Name of the HDF5 file.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>eig_vals</strong><span class="classifier">dict</span></dt><dd><p>Dictionary that contains eigenvalues, omega, and frequency.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Updated: 4/21/2022</p>
+</dd></dl>
+
+</section>
+<section id="module-sushi_nastran.kmp">
+<span id="sushi-nastran-kmp"></span><h2>sushi_nastran.kmp<a class="headerlink" href="#module-sushi_nastran.kmp" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sushi_nastran.kmp.read_kmp">
+<span class="sig-name descname"><span class="pre">read_kmp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.kmp.read_kmp" title="Permalink to this definition"></a></dt>
+<dd><p>This function will read the stiffness <span class="math notranslate nohighlight">\((K)\)</span>, mass <span class="math notranslate nohighlight">\((M)\)</span> and force <span class="math notranslate nohighlight">\((P)\)</span> matirx written out by NASTRAN in .pch format. 
+To export the KMP puch file from NASTRAN, include <strong>PARAM,EXTOUT,DMIGPCH</strong> card.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fname</strong><span class="classifier">str</span></dt><dd><p>Punch file name.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">str</span></dt><dd><p>Pass <code class="code docutils literal notranslate"><span class="pre">&quot;P&quot;</span></code> in the .pch file inlcudes a force vector and if you would like read that as well.
+Not case sensitive.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>kmp</strong><span class="classifier">dict</span></dt><dd><p>A dictionary of stiffness, mass, and force matirx. 
+format = <code class="code docutils literal notranslate"><span class="pre">{str:</span> <span class="pre">ndarray}</span></code></p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Cannot handle extremely large matrices due to memory issues.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">read_kmp</span><span class="p">(</span><span class="s2">&quot;kmp_file.pch&quot;</span><span class="p">,</span> <span class="s2">&quot;p&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-sushi_nastran.nas_utils">
+<span id="sushi-nastran-nas-utils"></span><h2>sushi_nastran.nas_utils<a class="headerlink" href="#module-sushi_nastran.nas_utils" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sushi_nastran.nas_utils.spaces">
+<span class="sig-name descname"><span class="pre">spaces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.nas_utils.spaces" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the spaces needed to fill the rest of field.
+Assumes the small field with 8 characters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Exp: str</strong></dt><dd><p>A field value.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>filler</strong><span class="classifier">str</span></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">8-len(var)</span></code> number of empty spaces.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-sushi_nastran.rigids">
+<span id="sushi-nastran-rigids"></span><h2>sushi_nastran.rigids<a class="headerlink" href="#module-sushi_nastran.rigids" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sushi_nastran.rigids.generate_rbe2_file">
+<span class="sig-name descname"><span class="pre">generate_rbe2_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ele_id_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_nodes_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind_nodes_start</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sushi_nastran.rigids.generate_rbe2_file" title="Permalink to this definition"></a></dt>
+<dd><p>This function generates a text file that contains the Nastran input for a RBE2 connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dof</strong><span class="classifier">int</span></dt><dd><p>RBE2 degrees of freedom.</p>
+</dd>
+<dt><strong>num_nodes: int</strong></dt><dd><p>The number of RBE2 cards to write out.</p>
+</dd>
+<dt><strong>ele_id_start: int</strong></dt><dd><p>Element ID start number</p>
+</dd>
+<dt><strong>d_nodes_start: int</strong></dt><dd><p>Dependent nodes start number</p>
+</dd>
+<dt><strong>ind_nodes_start: int</strong></dt><dd><p>Independent nodes start number.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>A file named <cite>RBE2_Input_Nastran.txt</cite> with the RBE2 cards.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>List must be supplied in int format as this function will convert it to strings.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">generate_rbe2_file</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span><span class="mi">600</span><span class="p">)</span> 
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-sushi_nastran.write_loads">
+<span id="sushi-nastran-write-loads"></span><h2>sushi_nastran.write_loads<a class="headerlink" href="#module-sushi_nastran.write_loads" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sushi_math.html" class="btn btn-neutral float-left" title="sushi_math" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sushi_plot.html" class="btn btn-neutral float-right" title="sushi_plot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Suyash Bhattarai.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

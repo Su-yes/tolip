@@ -1,0 +1,17 @@
+# Byte-compiled files
+__pycache__/
+
+# Ignore the PyPi realted build files.
+/build/
+/dist/
+**/tolip.egg-info/
+
+
+/tolip/
+
+# Ignore sphinx realted files
+README.rst
+LICENSE.txt
+Setup.py
+
+ 
